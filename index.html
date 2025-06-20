@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otak Anti-Malas: Pola & Struktur - eBook Premium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --card-bg: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --gold-primary: #d4af37;
+            --gold-secondary: #ffd700;
+            --gold-accent: rgba(212, 175, 55, 0.2);
+            --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #1a1a1a 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gold-primary);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--primary-bg);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            padding: 80px 0 40px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cover Page */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a2a2a 0%, var(--primary-bg) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .premium-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-gold);
+            position: relative;
+        }
+
+        .premium-logo img {
+            width: 112%;
+            height: 112%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+
+
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .cover .subtitle {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--primary-bg);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Table of Contents */
+        .toc {
+            padding: 100px 0;
+        }
+
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--gold-primary);
+        }
+
+        .toc-list {
+            display: grid;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .toc-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toc-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .toc-item:hover {
+            border-color: var(--gold-primary);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .toc-item:hover::before {
+            left: 100%;
+        }
+
+        .toc-number {
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .toc-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .toc-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Chapter Content */
+        .chapter {
+            padding: 100px 0;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .chapter-number {
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .chapter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .chapter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chapter-content p {
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #2a1810, #3a2220);
+            border-left: 4px solid var(--gold-primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .action-list {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid var(--gold-primary);
+        }
+
+        .action-list h4 {
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .action-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .action-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-weight: bold;
+        }
+
+        /* Navigation Controls */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-chapter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--gold-primary);
+            color: var(--text-primary);
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-chapter-btn:hover {
+            background: var(--gold-primary);
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a2a2a 0%, var(--primary-bg) 70%);
+        }
+
+        .conclusion h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold-primary);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-content {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .final-cta {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--primary-bg);
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 30px;
+        }
+
+        .final-cta:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-buttons {
+                gap: 8px;
+            }
+
+            .nav-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .cover h1 {
+                font-size: 2.5rem;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .toc-item {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 60px 0 30px;
+            }
+
+            .toc {
+                padding: 80px 0;
+            }
+
+            .chapter {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="logo">Otak Anti-Malas</div>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="showSection('cover')">Cover</button>
+                <button class="nav-btn" onclick="showSection('toc')">Daftar Isi</button>
+                <button class="nav-btn" onclick="showSection('conclusion')">Penutup</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Section -->
+    <div id="cover" class="section active">
+        <div class="cover">
+            <div class="cover-content">
+                <div class="premium-logo">
+                    <img src="https://kmzmy.github.io/Ot4k-Anti-Malas/otak.webp" alt="Logo Otak">
+                </div>
+
+                <h1>Otak Anti‑Malas</h1>
+                <p class="subtitle">Pola otak dan struktur apa yang harus lu lakuin biar gak jadi pemalas—langkah brutal
+                    tapi efektif!</p>
+                <button class="cta-button" onclick="showSection('toc')">Mulai Membaca</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div id="toc" class="section">
+        <div class="container">
+            <div class="toc">
+                <h2>Daftar Isi</h2>
+                <div class="toc-list">
+                    <div class="toc-item" onclick="showSection('chapter1')">
+                        <div class="toc-number">BAB 1</div>
+                        <div class="toc-title">Racun Mental yang Bikin Lu Stuck</div>
+                        <div class="toc-desc">Mengapa otak lu terus mencari alasan untuk tidak bertindak dan bagaimana
+                            memutus siklus mental yang meracuni</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter2')">
+                        <div class="toc-number">BAB 2</div>
+                        <div class="toc-title">Dopamine Hijacking: Musuh Terbesar Produktivitas</div>
+                        <div class="toc-desc">Bagaimana teknologi dan kebiasaan buruk merampok kemampuan otak lu untuk
+                            fokus pada hal penting</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter3')">
+                        <div class="toc-number">BAB 3</div>
+                        <div class="toc-title">Mengubah Jalur Saraf: Retas Otak Lu</div>
+                        <div class="toc-desc">Teknik neuroplastisitas untuk mengubah pola pikir bawaan dari malas
+                            menjadi berorientasi tindakan</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter4')">
+                        <div class="toc-number">BAB 4</div>
+                        <div class="toc-title">Protokol Pagi: Atur Mental untuk Dominasi</div>
+                        <div class="toc-desc">Ritual pagi yang secara psikologis memprogram otak lu untuk mengendalikan
+                            hari, bukan dikendali hari</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter5')">
+                        <div class="toc-number">BAB 5</div>
+                        <div class="toc-title">Strategi Kemenangan Kecil: Momentum Psikologis</div>
+                        <div class="toc-desc">Sistem kecil yang membangun kepercayaan diri dan menciptakan kecanduan
+                            positif pada pencapaian</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter6')">
+                        <div class="toc-number">BAB 6</div>
+                        <div class="toc-title">Pemasangan Rasa Takut: Motivasi dari Ketakutan</div>
+                        <div class="toc-desc">Menggunakan rasa takut sebagai bahan bakar untuk tindakan dengan cara yang
+                            sehat dan berkelanjutan</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter7')">
+                        <div class="toc-number">BAB 7</div>
+                        <div class="toc-title">Manajemen Energi: Bukan Manajemen Waktu</div>
+                        <div class="toc-desc">Mengoptimalkan ritme biologis dan energi mental untuk produktivitas
+                            maksimal</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter8')">
+                        <div class="toc-number">BAB 8</div>
+                        <div class="toc-title">Rekayasa Lingkungan Sosial</div>
+                        <div class="toc-desc">Merancang lingkungan sosial yang memaksa lu menjadi versi terbaik dari
+                            diri sendiri</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter9')">
+                        <div class="toc-number">BAB 9</div>
+                        <div class="toc-title">Pergeseran Identitas: Dari Pemalas ke Pelaksana</div>
+                        <div class="toc-desc">Transformasi identitas fundamental yang mengubah cara lu melihat diri
+                            sendiri</div>
+                    </div>
+
+                    <div class="toc-item" onclick="showSection('chapter10')">
+                        <div class="toc-number">BAB 10</div>
+                        <div class="toc-title">Mode Pemeliharaan: Konsistensi Jangka Panjang</div>
+                        <div class="toc-desc">Sistem untuk mempertahankan momentum dan mencegah kembali ke pola lama
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 1 -->
+    <div id="chapter1" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 1</div>
+                    <h1 class="chapter-title">Racun Mental yang Bikin Lu Stuck</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu tau gak kenapa setiap hari lu bangun dengan niat yang sama: "Hari ini gue bakal produktif,"
+                        tapi ujung-ujungnya malah gulir Instagram sambil nonton Netflix? <span class="highlight">Ini
+                            bukan masalah disiplin, ini masalah racun mental yang udah menggerogoti otak lu selama
+                            bertahun-tahun.</span></p>
+
+                    <p>Otak lu itu pada dasarnya adalah mesin bertahan hidup yang dirancang untuk menghemat energi.
+                        Setiap kali lu mau ngerjain sesuatu yang "susah" atau "gak nyaman," otak lu langsung aktifin
+                        sistem alarm: "Bahaya! Ini bakal capek! Mending gak usah!"</p>
+
+                    <div class="warning-box">
+                        <p><strong>Realita Pahit:</strong> Setiap hari lu gak bertindak, lu makin tenggelam dalam pola
+                            mental yang sama. Lu jadi makin nyaman di zona aman, makin takut sama tantangan, dan makin
+                            percaya bahwa lu memang "orang yang malas."</p>
+                    </div>
+
+                    <p>Yang lebih parah lagi, <span class="highlight">lu udah jadi ahli dalam bikin alasan</span>. "Gue
+                        lelah hari ini." "Besok aja deh." "Gue gak punya waktu." "Gue gak punya mood." Setiap alasan
+                        yang lu buat itu kayak netesin racun ke otak lu sendiri.</p>
+
+                    <p>Tau gak apa yang terjadi kalau lu terus kayak gini? Lu bakal jadi orang yang hidupnya macet di
+                        tempat yang sama. Temen-temen lu mulai meninggalkan lu. Karir lu gak kemana-mana. Impian lu cuma
+                        jadi angan-angan di kepala.</p>
+
+                    <p>Tapi lu tau yang paling menyakitkan? <span class="highlight">Lu bakal nyesel pas udah tua karena
+                            gak pernah jadi versi terbaik dari diri lu sendiri.</span> Lu bakal liat orang lain yang
+                        dulunya setara sama lu, sekarang udah jauh di atas lu. Dan semua itu karena mereka berani keluar
+                        dari zona nyaman, sementara lu masih macet dengan alasan yang sama.</p>
+
+                    <div class="action-list">
+                        <h4>Yang Harus Lu Lakuin Mulai Hari Ini:</h4>
+                        <ul>
+                            <li>Tulis semua alasan yang biasa lu pakai - buat jadi terlihat</li>
+                            <li>Setiap kali lu mau bikin alasan, berhenti dan bilang: "Ini racun mental"</li>
+                            <li>Pilih 1 hal kecil yang udah lu tunda, kerjain sekarang juga</li>
+                            <li>Pasang timer 25 menit, fokus total tanpa gangguan apapun</li>
+                            <li>Rasakan gimana perasaan lu setelah menyelesaikan sesuatu</li>
+                        </ul>
+                    </div>
+
+                    <p>Ingat, <span class="highlight">setiap detik yang lu buang untuk alasan adalah detik yang lu curi
+                            dari masa depan lu sendiri.</span> Berhenti jadi pencuri terhadap diri sendiri. Mulai
+                        sekarang.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('toc')">Daftar Isi</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter2')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div id="chapter2" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 2</div>
+                    <h1 class="chapter-title">Dopamine Hijacking: Musuh Terbesar Produktivitas</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu pikir lu yang ngontrol hidup lu? <span class="highlight">Salah besar. Yang ngontrol hidup lu
+                            adalah dopamine, dan sekarang dia lagi dibajak sama teknologi yang dirancang khusus untuk
+                            bikin lu kecanduan.</span></p>
+
+                    <p>Setiap kali lu denger notifikasi, otak lu keluarin dopamine. Setiap kali lu gulir media sosial,
+                        dopamine. Setiap kali lu dapet suka atau komentar, lonjakan dopamine yang bikin lu ngidam lebih
+                        banyak. Lu udah jadi tikus percobaan yang ditekan tombolnya terus-terusan.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Fakta Mengerikan:</strong> Rata-rata orang cek HP mereka 96 kali sehari. Itu berarti
+                            setiap 10 menit lu ganggu fokus lu sendiri. Gimana mau produktif kalau otak lu gak pernah
+                            dapat istirahat dari rangsangan?</p>
+                    </div>
+
+                    <p>Yang bikin makin parah, <span class="highlight">otak lu udah kebiasaan dapet dopamine yang instan
+                            dan mudah</span>. Jadi pas lu mau ngerjain sesuatu yang butuh usaha dan waktu lama, otak lu
+                        langsung tolak: "Ini gak ngasih hadiah yang cepet, mending gulir aja."</p>
+
+                    <p>Lu tau kenapa lu susah banget fokus baca buku tapi gampang banget nonton TikTok 3 jam tanpa
+                        henti? Karena TikTok ngasih dopamine setiap 15 detik, sementara buku butuh puluhan halaman baru
+                        lu ngerasain kepuasan.</p>
+
+                    <p>Efeknya? <span class="highlight">Rentang perhatian lu hancur. Kemampuan kerja mendalam lu rusak.
+                            Toleransi lu terhadap kebosanan jadi nol.</span> Lu jadi orang yang gak bisa diem 5 menit
+                        tanpa rangsangan dari luar.</p>
+
+                    <p>Sekarang bayangin lu udah 40 tahun, lu liat anak lu bisa fokus belajar 2 jam tanpa henti
+                        sementara lu gak bisa fokus kerja 20 menit tanpa buka sosmed. Malu gak? Atau lebih parah lagi,
+                        lu gak bisa capai apapun yang penting karena lu gak pernah bisa mendalami satu hal cukup lama.
+                    </p>
+
+                    <div class="action-list">
+                        <h4>Protokol Detoks Dopamine:</h4>
+                        <ul>
+                            <li>Matikan semua notifikasi yang gak penting di HP lu</li>
+                            <li>Simpen HP di ruangan lain pas lu kerja</li>
+                            <li>Pasang aplikasi pemblokir untuk sosmed (minimal 4 jam sehari)</li>
+                            <li>Latihin "meditasi kebosanan" - diem 10 menit tanpa ngapa-ngapain</li>
+                            <li>Ganti kepuasan instan dengan tantangan kepuasan tertunda</li>
+                            <li>Baca buku fisik minimal 30 menit sehari tanpa gangguan</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu punya pilihan: jadi budak algoritma atau jadi tuan dari dopamine lu
+                            sendiri.</span> Tapi inget, setiap hari lu gak ambil kendali, lu makin jadi zombie yang
+                        hidupnya dikontrol sama teknologi.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter1')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter3')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div id="chapter3" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 3</div>
+                    <h1 class="chapter-title">Mengubah Jalur Saraf: Retas Otak Lu</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Kabar baiknya? <span class="highlight">Otak lu itu fleksibel. Artinya lu bisa secara harfiah
+                            mengubah struktur dan pola kerja otak lu melalui neuroplastisitas.</span> Tapi kabar
+                        buruknya? Ini butuh usaha yang konsisten dan gak semua orang mau bayar harganya.</p>
+
+                    <p>Setiap kali lu ngulang suatu perilaku, lu kuatin jalur saraf yang spesifik. Kalau lu terbiasa
+                        menunda-nunda, jalur saraf untuk penundaan lu makin kuat. Kalau lu terbiasa mengambil tindakan,
+                        jalur saraf untuk tindakan lu yang makin kuat.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Realita:</strong> Jalur saraf yang udah kuat bakal jadi "mode bawaan" otak lu.
+                            Makanya lu ngerasa "alami" untuk malas, karena jalur itu udah terbentuk bertahun-tahun. Tapi
+                            lu bisa bangun ulang!</p>
+                    </div>
+
+                    <p>Proses mengubah jalur ini kayak bikin jalan baru di hutan. <span class="highlight">Awalnya lu
+                            harus motong-motong semak, susah banget. Tapi kalau lu konsisten lewat jalan itu, lama-lama
+                            jadi jalan mulus.</span> Jalur saraf baru butuh pengulangan dan konsistensi.</p>
+
+                    <p>Tapi inget, <span class="highlight">jalur lama gak akan hilang. Mereka cuma jadi "tidur"</span>.
+                        Kalau lu berhenti latihan, kebiasaan lama bakal balik lagi. Makanya banyak orang yang ledakan
+                        motivasinya cuma bertahan seminggu.</p>
+
+                    <p>Yang paling penting adalah "pemutus pola." Lu harus sadar kapan lu mulai masuk ke pola lama,
+                        terus putus dengan perilaku baru. Ini butuh tingkat kesadaran yang tinggi dan kekuatan mental
+                        untuk melawan kelembaman.</p>
+
+                    <p>Bayangin 6 bulan dari sekarang, lu udah berhasil mengubah jalur otak lu. Lu jadi orang yang alami
+                        mengambil tindakan. Lu jadi orang yang ngidam produktivitas daripada hiburan. Lu jadi orang yang
+                        bersemangat bangun pagi karena lu tau lu bakal capai sesuatu yang penting hari itu.</p>
+
+                    <div class="action-list">
+                        <h4>Teknik Mengubah Jalur Saraf:</h4>
+                        <ul>
+                            <li>Kenali pola pemicu yang bikin lu menunda-nunda</li>
+                            <li>Buat ritual baru untuk ganti pola lama</li>
+                            <li>Latihin "tindakan kecil" - tindakan sekecil apapun pas lu ngerasa resistensi</li>
+                            <li>Pakai teknik visualisasi - bayangin lu berhasil selesaikan tugas</li>
+                            <li>Catat beruntun - rayakan kemenangan kecil untuk kuatin jalur baru</li>
+                            <li>Latihin kesadaran untuk tingkatkan kepekaan kapan pola lama muncul</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Otak lu adalah alat paling kuat yang lu punya. Tapi kalau lu gak tau cara
+                            pakainya, dia bakal jadi musuh lu sendiri.</span> Berhenti jadi korban dari otak lu. Mulai
+                        jadi arsitek.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter2')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter4')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div id="chapter4" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 4</div>
+                    <h1 class="chapter-title">Protokol Pagi: Atur Mental untuk Dominasi</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p><span class="highlight">Gimana lu mulai hari lu secara harfiah menentukan gimana hari itu bakal
+                            berakhir.</span> Kalau lu bangun langsung cek HP, gulir sosmed, terus keluh kesah tentang
+                        hidup, selamat - lu udah atur kondisi mental untuk jadi korban sepanjang hari.</p>
+
+                    <p>Rutinitas pagi itu bukan tentang tiru-tiru apa yang dilakuin orang sukses. Ini tentang secara
+                        strategis memprogram kondisi mental lu dari reaktif jadi proaktif, dari korban jadi pemenang.
+                    </p>
+
+                    <div class="warning-box">
+                        <p><strong>Kesalahan Fatal:</strong> Mayoritas orang ngasih 2 jam pertama di hari mereka untuk
+                            konsumsi informasi (berita, sosmed, chat). Padahal 2 jam pertama itu adalah puncak kondisi
+                            mental lu. Lu buang waktu prima lu untuk hal yang gak produktif.</p>
+                    </div>
+
+                    <p>Setiap pagi yang lu mulai dengan hal yang lu kendalikan (olahraga, meditasi, membaca), lu kirim
+                        sinyal ke otak lu: "Gue yang ngontrol hari ini." Sebaliknya, kalau lu mulai dengan perilaku
+                        reaktif (cek notif, respon hal luar), lu kirim sinyal: "Hari ini yang ngontrol gue."</p>
+
+                    <p><span class="highlight">Protokol pagi bukan tentang bangun jam 5 pagi atau mandi air
+                            dingin</span> (meskipun itu membantu). Ini tentang bikin momentum psikologis yang bikin lu
+                        ngerasa kuat dan terkendali sebelum dunia luar mulai minta perhatian lu.</p>
+
+                    <p>Bayangin perasaan bangun setiap hari tau persis apa yang bakal lu capai. Lu ngerasa berenergi,
+                        fokus, dan percaya diri. Lu gak tergantung sama mood atau keadaan luar. Lu udah muat amunisi
+                        mental untuk hadapi tantangan apa pun yang datang.</p>
+
+                    <p>Sekarang bandingkan sama lu yang sekarang: bangun ngerasa capek, langsung kewalahan sama
+                        notifikasi, mulai hari dengan cemas tentang deadline dan kewajiban. Lu udah kalah sebelum
+                        pertarungan dimulai.</p>
+
+                    <div class="action-list">
+                        <h4>Protokol Dominasi Pagi:</h4>
+                        <ul>
+                            <li>Jangan pegang HP dalam 1 jam pertama setelah bangun</li>
+                            <li>Minum air langsung - 500ml air</li>
+                            <li>10 menit gerakan/olahraga untuk aktifkan tubuh</li>
+                            <li>5 menit visualisasi - lihat hari lu sukses</li>
+                            <li>Tulis 3 tugas prioritas yang HARUS selesai hari ini</li>
+                            <li>Baca/dengar sesuatu yang mendidik untuk asah pikiran</li>
+                            <li>Afirmasi identitas: "Gue adalah orang yang mengambil tindakan"</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu punya 365 kesempatan dalam setahun untuk atur nada hari lu. Berapa
+                            kali lu bakal buang kesempatan itu?</span> Berhenti serahkan kekuatan lu ke kekuatan luar.
+                        Ambil kendali dari menit pertama lu buka mata.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter3')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter5')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div id="chapter5" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 5</div>
+                    <h1 class="chapter-title">Strategi Kemenangan Kecil: Momentum Psikologis</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu tau kenapa lu gampang kewalahan sama tujuan besar? <span class="highlight">Karena otak lu gak
+                            bisa proses "jadi sukses" atau "jadi kaya." Otak lu cuma bisa proses tindakan yang spesifik
+                            dan terukur.</span></p>
+
+                    <p>Kemenangan kecil itu kayak bilang ke otak lu: "Lu mampu capai sesuatu." Setiap kemenangan kecil
+                        ngasih lu dopamine yang alami dan sehat. Lu secara harfiah latih otak lu untuk hubungkan
+                        tindakan dengan hadiah.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Jebakan Psikologis:</strong> Lu sering abaikan kemajuan kecil karena lu harap
+                            perubahan besar. Padahal perubahan besar itu akumulasi dari tindakan kecil yang konsisten.
+                            Lu remehkan yang kecil, lu gak akan dapat yang besar.</p>
+                    </div>
+
+                    <p>Masalahnya, <span class="highlight">lu udah terkondisi untuk harap hasil besar secara
+                            instan</span>. Media sosial ngasih lu gambaran bahwa kesuksesan itu semalam. Lu gak sabar
+                        dengan proses. Lu mau transformasi tanpa mau bayar harga konsistensi.</p>
+
+                    <p>Tapi orang sukses tau rahasia ini: <span class="highlight">momentum mengalahkan motivasi</span>.
+                        Motivasi itu perasaan, datang dan pergi. Momentum itu fisika - benda bergerak tetap bergerak. Lu
+                        bangun momentum lewat kemenangan kecil yang konsisten.</p>
+
+                    <p>Bayangin lu udah 30 hari jalanin strategi kemenangan kecil. Lu percaya diri, karena setiap hari
+                        lu buktiin ke diri sendiri bahwa lu bisa diandalkan. Lu percaya diri sendiri, karena lu udah
+                        punya catatan tepati komitmen. Lu ngerasa kuat, karena lu tau lu mampu bangun apapun langkah
+                        demi langkah.</p>
+
+                    <p>Bandingkan sama sekarang: lu gak percaya diri sendiri karena lu udah berkali-kali ingkar janji ke
+                        diri sendiri. Lu ngerasa lemah karena lu gak pernah tuntas. Lu ragu kemampuan lu karena lu gak
+                        punya bukti bahwa lu bisa capai apapun.</p>
+
+                    <div class="action-list">
+                        <h4>Penerapan Kemenangan Kecil:</h4>
+                        <ul>
+                            <li>Pilih 1 kebiasaan yang SANGAT kecil (contoh: 5 push-up, baca 1 halaman)</li>
+                            <li>Komit cuma 2 menit sehari - bikin sangat mudah</li>
+                            <li>Catat visual - pakai kalender, kasih tanda centang setiap hari</li>
+                            <li>Rayakan kemenangan kecil - akui kemajuan sekecil apapun</li>
+                            <li>Fokus pada beruntun, bukan intensitas</li>
+                            <li>Setelah 1 minggu konsisten, boleh tingkatkan sedikit</li>
+                            <li>Tumpuk kemenangan - tambahin kebiasaan kecil baru setelah yang lama solid</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Kesuksesan itu bukan tentang melakukan hal luar biasa sesekali.
+                            Kesuksesan itu tentang melakukan hal sederhana secara konsisten.</span> Berhenti nunggu
+                        momen sempurna. Mulai dengan tindakan kecil yang gak sempurna sekarang juga.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter4')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter6')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div id="chapter6" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 6</div>
+                    <h1 class="chapter-title">Pemasangan Rasa Takut: Motivasi dari Ketakutan</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu nyaman dengan hidup lu sekarang? <span class="highlight">Bagus. Kenyamanan adalah pembunuh
+                            impian. Kenyamanan adalah alasan lu macet. Lu butuh dosis rasa takut yang sehat untuk dorong
+                            lu keluar dari kepuasan diri.</span></p>
+
+                    <p>Kebanyakan orang termotivasi oleh kesenangan (motivasi positif). Tapi riset menunjukkan bahwa
+                        takut kehilangan itu 2.5x lebih kuat daripada harapan dapat keuntungan. Lu lebih takut
+                        kehilangan 100rb daripada senang dapet 100rb.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Kebenaran Pahit:</strong> Kalau lu gak aktif tumbuh, lu aktif membusuk. Hidup itu
+                            permainan jumlah nol. Kalau lu tetap sama sementara dunia bergerak maju, lu sebenarnya
+                            bergerak mundur. Waktu terus berdetak.</p>
+                    </div>
+
+                    <p>Rasa takut yang sehat itu bukan takut gagal. <span class="highlight">Rasa takut yang sehat itu
+                            takut biasa-biasa aja. Takut buang potensi. Takut jadi umur 60 tahun dan sadar lu gak pernah
+                            beneran hidup.</span></p>
+
+                    <p>Lu tau yang paling mengerikan? Mati dengan penyesalan. Terbaring di ranjang kematian sambil
+                        mikir: "Seandainya gue udah bertindak untuk impian gue?" "Seandainya gue gak buang waktu untuk
+                        hal-hal yang gak berarti?" "Seandainya gue cukup berani untuk ambil risiko?"</p>
+
+                    <p>Sekarang bayangin lu 5 tahun lagi. Kalau lu terus dengan pola yang sekarang, lu bakal ada di
+                        mana? Masih macet di kerjaan yang lu benci? Masih ngeluh tentang hal yang sama? Masih bikin
+                        alasan yang sama? Masih nonton hidup lewat sementara orang lain capai impian mereka?</p>
+
+                    <p><span class="highlight">Takut tetap sama harus lebih besar daripada takut berubah.</span> Sakit
+                        disiplin harus lebih ringan daripada sakit penyesalan.</p>
+
+                    <div class="action-list">
+                        <h4>Proses Pemasangan Rasa Takut:</h4>
+                        <ul>
+                            <li>Tulis konsekuensi kalau lu gak berubah dalam 5 tahun</li>
+                            <li>Visualisasikan skenario terburuk kalau lu terus menunda-nunda</li>
+                            <li>Daftar semua kesempatan yang udah lu lewatkan karena tidak bertindak</li>
+                            <li>Hitung biaya tidak bertindak - waktu, uang, kesempatan, hubungan</li>
+                            <li>Tentukan batas waktu untuk tujuan lu - buat urgensi buatan</li>
+                            <li>Bagikan komitmen lu di depan umum - buat tekanan tanggung jawab</li>
+                            <li>Ingatkan diri sendiri setiap hari: "Waktu gue habis"</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu gak bisa termotivasi menuju kesuksesan. Lu harus takuti diri sendiri
+                            untuk bertindak.</span> Pakai rasa takut sebagai bahan bakar. Ubah kecemasan jadi aktivitas.
+                        Transformasi kekhawatiran jadi kerja.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter5')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter7')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div id="chapter7" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 7</div>
+                    <h1 class="chapter-title">Manajemen Energi: Bukan Manajemen Waktu</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu udah berapa kali beli perencana, unduh aplikasi produktivitas, bikin jadwal yang sempurna,
+                        tapi tetep aja gak produktif? <span class="highlight">Masalahnya bukan manajemen waktu.
+                            Masalahnya manajemen energi.</span></p>
+
+                    <p>Lu punya 24 jam yang sama dengan Elon Musk, tapi Elon capai 100x lebih banyak daripada lu.
+                        Bedanya bukan di waktu, bedanya di energi. Lu buang energi lu untuk hal-hal yang menguras tanpa
+                        nilai balik.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Vampir Energi:</strong> Kelelahan keputusan, orang beracun, kelebihan informasi,
+                            multitugas, perfeksionisme, perbandingan dengan orang lain. Semua ini menguras energi mental
+                            lu tanpa lu sadari.</p>
+                    </div>
+
+                    <p><span class="highlight">Energi itu sumber daya terbatas, dan lu cuma punya energi berkualitas
+                            tinggi untuk 3-4 jam sehari.</span> Kalau lu buang waktu energi tinggi untuk aktivitas
+                        bernilai rendah (gulir sosmed, gosip, khawatir), lu tinggal waktu energi rendah untuk aktivitas
+                        bernilai tinggi.</p>
+
+                    <p>Kebanyakan orang ngerjain hal berat pas mereka udah capek (malam), terus ngerjain hal mudah pas
+                        mereka segar (pagi). Ini terbalik. Lu harus lindungi energi prima lu untuk kerja paling penting.
+                    </p>
+
+                    <p>Manajemen energi juga soal pemulihan. Lu gak bisa keluarin energi terus-terusan tanpa masukan
+                        energi. Tapi lu salah paham tentang pemulihan. Pemulihan bukan harus istirahat. Pemulihan bisa
+                        jadi aktivitas fisik, hobi kreatif, atau percakapan bermakna.</p>
+
+                    <p>Bayangin lu kuasai manajemen energi. Lu tau kapan waktu tepat untuk hadapi tugas menantang. Lu
+                        tau aktivitas apa yang ngasih energi vs yang menguras. Lu rancang hari lu berdasarkan puncak dan
+                        lembah energi. Lu capai lebih banyak dalam 4 jam fokus daripada orang lain dalam 12 jam
+                        tercerai-berai.</p>
+
+                    <div class="action-list">
+                        <h4>Protokol Optimasi Energi:</h4>
+                        <ul>
+                            <li>Catat tingkat energi setiap 2 jam selama 1 minggu - kenali pola</li>
+                            <li>Jadwalkan kerja berdampak tinggi di waktu energi puncak</li>
+                            <li>Kelompokkan aktivitas serupa untuk kurangi perpindahan konteks</li>
+                            <li>Singkirkan penguras energi - konten beracun, orang negatif, keputusan tidak perlu</li>
+                            <li>Optimalkan fondasi fisik - tidur, nutrisi, gerakan</li>
+                            <li>Latihin tugas tunggal - fokus total pada satu hal</li>
+                            <li>Bangun ritual energi - aktivitas yang konsisten tingkatkan energi lu</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Waktu itu demokratis - semua orang dapat 24 jam. Energi itu hierarkis -
+                            pemenang tau cara mengoptimalkannya.</span> Berhenti kelola waktu. Mulai kelola energi.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter6')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter8')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 8 -->
+    <div id="chapter8" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 8</div>
+                    <h1 class="chapter-title">Rekayasa Lingkungan Sosial</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p><span class="highlight">Lu adalah rata-rata dari 5 orang yang paling sering lu
+                            berinteraksi.</span> Kalau lu kelilingi diri dengan tukang ngeluh, lu jadi tukang ngeluh.
+                        Kalau lu kelilingi diri dengan pencapai, lu jadi pencapai. Lingkungan mengalahkan kemauan.</p>
+
+                    <p>Lu tau kenapa resolusi lu selalu gagal? Karena lu balik ke lingkungan yang sama dengan orang yang
+                        sama yang punya pola pikir yang sama. Lu harap hasil berbeda tapi lu gak ubah variabel paling
+                        krusial: lingkungan sosial.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Gravitasi Sosial:</strong> Orang-orang di sekitar lu secara tidak sadar akan tarik lu
+                            balik ke level mereka. Bukan karena mereka jahat, tapi karena perubahan lu bikin mereka gak
+                            nyaman dengan diri mereka sendiri.</p>
+                    </div>
+
+                    <p>Kebanyakan orang takut untuk jauhi teman beracun atau keluarga yang negatif. Mereka bilang "tapi
+                        dia temen lama gue" atau "tapi dia keluarga." <span class="highlight">Lu mau setia sama orang
+                            yang hancurin potensi lu?</span></p>
+
+                    <p>Lu gak harus putus hubungan sepenuhnya. Tapi lu harus strategis soal paparan. Batasi waktu dengan
+                        vampir energi. Tambah waktu dengan pengganda energi. Kelilingi diri dengan orang yang tantang lu
+                        untuk tumbuh.</p>
+
+                    <p>Cari komunitas yang punya tujuan dan nilai serupa. Komunitas online, grup mastermind, jaringan
+                        profesional. Lu butuh orang yang bikin keunggulan jadi normal, bukan biasa-biasa aja.</p>
+
+                    <p>Bayangin lingkungan di mana semua orang di sekitar lu terus naik level. Di mana percakapan normal
+                        tentang pertumbuhan, tujuan, pencapaian. Di mana tekanan teman sebaya benar-benar positif -
+                        tekanan untuk jadi lebih baik. Di mana lu ngerasa aneh kalau lu gak produktif.</p>
+
+                    <div class="action-list">
+                        <h4>Langkah Rekayasa Lingkungan:</h4>
+                        <ul>
+                            <li>Audit lingkaran sosial saat ini - kategorikan pemberi energi vs pengambil energi</li>
+                            <li>Kurangi waktu secara bertahap dengan pengaruh negatif</li>
+                            <li>Aktif cari mentor atau panutan dalam bidang yang lu minati</li>
+                            <li>Gabung komunitas/grup yang selaras dengan tujuan lu</li>
+                            <li>Ikuti kreator konten inspiratif, berhenti ikuti yang beracun</li>
+                            <li>Ciptakan lingkungan fisik yang dukung produktivitas</li>
+                            <li>Bagikan tujuan secara publik untuk ciptakan tanggung jawab positif</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu bisa ubah hidup lu dengan mengubah lingkungan lu. Tapi kebanyakan
+                            orang coba ubah hidup mereka sambil tetap jaga semuanya sama.</span> Jadi strategis. Jadi
+                        selektif. Jadi pelindung energi lu.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter7')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter9')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 9 -->
+    <div id="chapter9" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 9</div>
+                    <h1 class="chapter-title">Pergeseran Identitas: Dari Pemalas ke Pelaksana</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Ini bab paling penting dalam seluruh eBook ini. <span class="highlight">Semua perubahan perilaku
+                            yang berkelanjutan dimulai dari perubahan identitas. Lu gak bisa tampil melebihi identitas
+                            lu dalam jangka panjang.</span></p>
+
+                    <p>Selama ini lu mungkin fokus di hasil akhir (gue mau punya badan bagus) atau proses (gue mau gym
+                        5x seminggu). Tapi lu lewati yang paling fundamental: identitas (gue adalah orang yang bugar dan
+                        sehat).</p>
+
+                    <div class="warning-box">
+                        <p><strong>Krisis Identitas:</strong> Dalam hati, lu masih identifikasi sebagai "orang yang
+                            malas," "orang yang gak bisa fokus," "orang yang selalu menunda-nunda." Selama identitas ini
+                            gak berubah, lu akan selalu balik ke pola lama.</p>
+                    </div>
+
+                    <p>Setiap tindakan yang lu ambil itu pada dasarnya pemilihan untuk jenis orang yang lu mau jadi.
+                        <span class="highlight">Setiap kali lu pilih tindakan produktif daripada penundaan, lu milih:
+                            "Gue adalah orang produktif."</span></p>
+
+                    <p>Masalah dengan kebanyakan orang: mereka nunggu sampai mereka "ngerasa" kayak orang produktif baru
+                        mereka bertindak kayak orang produktif. Padahal sebaliknya - lu bertindak kayak orang produktif
+                        secara konsisten, akhirnya lu jadi orang produktif.</p>
+
+                    <p>Pergeseran identitas itu gak instan. Lu gak bisa bangun besok terus bilang "sekarang gue orang
+                        produktif" kalau tindakan lu masih sama. Lu harus dapatkan identitas baru lewat bukti - tindakan
+                        harian kecil yang konsisten dengan identitas yang lu mau.</p>
+
+                    <p>Bayangin 6 bulan dari sekarang, kalau ada yang tanya "lu tipe orang seperti apa?" Lu dengan
+                        percaya diri bilang: "Gue orang yang bisa diandalkan, yang selalu tuntas, yang ubah ide jadi
+                        kenyataan." Dan lu punya bukti untuk dukung pernyataan itu.</p>
+
+                    <div class="action-list">
+                        <h4>Proses Pergeseran Identitas:</h4>
+                        <ul>
+                            <li>Tentukan identitas jelas yang lu mau: "Gue adalah orang yang..."</li>
+                            <li>Daftar perilaku yang konsisten dengan identitas itu</li>
+                            <li>Mulai berikan suara harian lewat tindakan kecil</li>
+                            <li>Bicara ke diri sendiri dengan bahasa identitas baru</li>
+                            <li>Buat keputusan dengan tanya: "Apa yang akan dilakukan [identitas baru]?"</li>
+                            <li>Kumpulkan bukti - catat tindakan yang selaras dengan identitas baru</li>
+                            <li>Rayakan tindakan konsisten identitas, bukan cuma hasil akhir</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu bukan berusaha bangun kebiasaan. Lu bangun identitas. Kebiasaan cuma
+                            kendaraan untuk jadi orang yang lu mau.</span> Ubah siapa diri lu, dan apa yang lu lakukan
+                        akan mengikuti secara alami.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter8')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('chapter10')">Bab Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 10 -->
+    <div id="chapter10" class="section">
+        <div class="container">
+            <div class="chapter">
+                <div class="chapter-header">
+                    <div class="chapter-number">BAB 10</div>
+                    <h1 class="chapter-title">Mode Pemeliharaan: Konsistensi Jangka Panjang</h1>
+                </div>
+
+                <div class="chapter-content">
+                    <p>Lu udah sampe bab terakhir. Tapi ini bukan akhir, ini adalah awal. <span class="highlight">Semua
+                            yang lu baca gak berarti apa-apa kalau lu gak jaga konsistensi dalam jangka panjang.</span>
+                    </p>
+
+                    <p>Kesalahan terbesar yang dilakukan orang: mereka pikir transformasi itu acara, padahal
+                        transformasi itu proses. Mereka harap perubahan permanen dari usaha sementara. Mereka lari cepat
+                        saat mereka butuh maraton.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Realita Kemunduran:</strong> 92% orang yang buat resolusi tahun baru gagal dalam 3
+                            bulan. 70% orang yang berhasil turun berat badan akan naik lagi. Kesuksesan tanpa sistem
+                            pemeliharaan sama dengan kesuksesan sementara.</p>
+                    </div>
+
+                    <p>Masalahnya, <span class="highlight">lu udah terkondisi harap kemajuan linear</span>. Lu harap
+                        grafik kemajuan yang selalu naik. Padahal kemajuan nyata itu siklus - ada naik turun. Yang
+                        penting adalah tren jangka panjang, bukan fluktuasi harian.</p>
+
+                    <p>Lu akan ada hari buruk. Lu akan ada momen di mana lu mau menyerah. Lu akan ada waktu di mana pola
+                        lama muncul lagi. Ini normal. Yang bedain orang sukses dari yang gagal adalah apa yang mereka
+                        lakukan setelah kemunduran.</p>
+
+                    <p>Fase pemeliharaan itu bukan tentang kesempurnaan. <span class="highlight">Ini tentang ketahanan.
+                            Ini tentang bangkit lebih cepat dari kegagalan. Ini tentang jatuh ke depan, bukan jatuh ke
+                            belakang.</span></p>
+
+                    <p>Dalam 1 tahun, lu akan hadapi ratusan momen di mana lu harus pilih antara pola lama dan identitas
+                        baru. Setiap pilihan adalah kesempatan untuk perkuat atau hancurkan transformasi yang udah lu
+                        bangun.</p>
+
+                    <div class="action-list">
+                        <h4>Sistem Pemeliharaan:</h4>
+                        <ul>
+                            <li>Evaluasi mingguan - nilai kemajuan dan sesuaikan strategi</li>
+                            <li>Bangun beberapa rencana cadangan untuk saat motivasi turun</li>
+                            <li>Ciptakan sistem tanggung jawab yang berkelanjutan</li>
+                            <li>Kembangkan protokol bangkit setelah kemunduran</li>
+                            <li>Terus belajar - baca, dengar, kembangkan modal intelektual</li>
+                            <li>Catat indikator utama, bukan cuma hasil akhir</li>
+                            <li>Rayakan konsistensi, bukan cuma pencapaian</li>
+                        </ul>
+                    </div>
+
+                    <p><span class="highlight">Lu udah investasi waktu untuk baca eBook ini. Jangan buang investasi itu
+                            dengan tidak bertindak. Mulai hari ini. Mulai kecil. Tapi mulai.</span></p>
+
+                    <p>Ingat: <span class="highlight">Lu bukan korban dari keadaan. Lu adalah arsitek dari takdir lu
+                            sendiri.</span> Setiap pilihan lu adalah blok bangunan untuk masa depan yang lu mau
+                        ciptakan.</p>
+                </div>
+
+                <div class="chapter-nav">
+                    <button class="nav-chapter-btn" onclick="showSection('chapter9')">Bab Sebelumnya</button>
+                    <button class="nav-chapter-btn" onclick="showSection('conclusion')">Penutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div id="conclusion" class="section">
+        <div class="container">
+            <div class="conclusion">
+                <h2>Sekarang Atau Tidak Sama Sekali</h2>
+
+                <div class="conclusion-content">
+                    <p>Lu udah sampai di bab terakhir. Lu udah tau semua rahasia, teknik, dan strategi untuk berubah
+                        dari pemalas jadi pengambil tindakan. <span class="highlight">Tapi pengetahuan tanpa tindakan
+                            adalah ilusi yang paling berbahaya.</span></p>
+
+                    <p>Sekarang lu berdiri di persimpangan. Lu bisa tutup eBook ini, merasa terinspirasi untuk beberapa
+                        jam, terus balik ke pola lama. Atau lu bisa buat keputusan hari ini untuk secara harfiah ubah
+                        arah hidup lu.</p>
+
+                    <p><span class="highlight">Momen ini adalah ujian. Apakah lu serius tentang transformasi atau lu
+                            cuma mau merasa baik tentang kemungkinan perubahan?</span></p>
+
+                    <p>5 tahun dari sekarang, lu akan jadi versi yang sepenuhnya berbeda dari lu sekarang.
+                        Pertanyaannya: lu mau jadi versi yang lebih baik atau lebih buruk? Keputusan itu ada di tangan
+                        lu. Tapi lu harus putuskan HARI INI.</p>
+
+                    <p>Lu gak bisa nunggu momen sempurna. Momen sempurna itu mitos. Lu gak bisa nunggu sampai lu "merasa
+                        siap." Siap adalah tindakan, bukan perasaan. Lu gak bisa nunggu sampai lu punya semua sumber
+                        daya. Lu mulai dengan apa yang lu punya sekarang.</p>
+
+                    <div class="warning-box">
+                        <p><strong>Peringatan Terakhir:</strong> Setiap hari yang lu tunda adalah hari yang lu curi dari
+                            versi masa depan diri lu. Setiap alasan yang lu buat adalah pengkhianatan terhadap potensi
+                            lu. Waktu adalah satu-satunya aset yang gak bisa lu dapatkan kembali.</p>
+                    </div>
+
+                    <p><span class="highlight">Berhenti baca tentang perubahan. Berhenti pikir tentang perubahan.
+                            Berhenti rencanakan perubahan. MULAI BERUBAH.</span></p>
+
+                    <p>Pilih 1 tindakan kecil dari semua yang lu baca. LAKUIN HARI INI. Buktiin ke diri sendiri bahwa lu
+                        mampu menuntaskan. Bangun bukti bahwa identitas baru lu adalah kenyataan, bukan fantasi.</p>
+
+                    <p>Diri masa depan lu sedang melihat ke belakang dan berharap lu buat keputusan yang tepat hari ini.
+                        Diri masa lalu lu udah berkorban untuk kasih lu kesempatan ini. Jangan sia-siakan.</p>
+
+                    <button class="final-cta" onclick="showSection('chapter1')">MULAI TRANSFORMASI SEKARANG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+
+                // Scroll to top of the page
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', function (event) {
+            if (event.state && event.state.section) {
+                showSection(event.state.section);
+            }
+        });
+
+        // Update URL when section changes (optional)
+        const originalShowSection = showSection;
+        showSection = function (sectionId) {
+            originalShowSection(sectionId);
+            history.pushState({ section: sectionId }, '', '#' + sectionId);
+        };
+
+        // Load section from URL hash on page load
+        window.addEventListener('load', function () {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+    </script>
+</body>
+
+</html>
